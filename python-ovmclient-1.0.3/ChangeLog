@@ -1,0 +1,24 @@
+CHANGES
+=======
+
+1.0.3
+-----
+
+* Adds virtual disk get_empty_cdrom
+* Adds virtual disk resize
+
+1.0.2
+-----
+
+* Adds disk_mappings property
+
+1.0.1
+-----
+
+* Improves the jobs and virtual disks API coverage
+* Minor README edits
+
+1.0.0
+-----
+
+* Initial commit

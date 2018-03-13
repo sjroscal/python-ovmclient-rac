@@ -1,0 +1,25 @@
+---
+- hosts: ovm
+  tasks:
+  - name: import template and clone vms
+    command: python imptmp_n_clonevm.py
+    args:
+        chdir: ~/python-ovmclient-1.0.3
+
+  - name: launch deploycluster tool
+    command: python launch_deploy_rac.py
+    args:
+        chdir: ~/python-ovmclient-1.0.3
+
+
+#  - name: deploy_rac_with_ansible
+#    vars:
+#      contents: "{{ lookup('file', 'vm.json')|from_json }}"
+#
+#    environment:
+#      JAVA_HOME: "{{ contents.java_home }}"
+#
+#    shell: |
+#      {{ contents.deploy_rac.script_name }} -u {{contents.ovmm.ovmmuser}} -p {{contents.ovmm.ovmmpw}} -H {{contents.ovmm.ovmmhost}} --insecure -M {{contents.total_vms_to_clone.0.name}},{{contents.total_vms_to_clone.1.name}} -N {{contents.deploy_rac.init_file}};
+#    args:
+#      executable: /bin/bash

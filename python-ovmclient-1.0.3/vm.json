@@ -1,0 +1,41 @@
+{
+  "ovmm": { 
+            "ovmmurl": "https://ovmm-test.gdn.aus.osc:7002/ovm/core/wsapi/rest",
+            "ovmmhost": "ovmm-test.gdn.aus.osc",
+            "ovmmuser": "admin",
+            "ovmmpw": "Welcome1"
+  },
+  "repo": {
+            "reponame": "em13-test-localpool1"
+  },
+  "pool": {
+            "poolname": "em13testpool"
+  },
+  "template": {
+            "urls": ["http://140.83.212.72:8000/OVM_OL7U3_X86_64_12201DBRAC_PVHVM-1of2.tar.gz","http://140.83.212.72:8000/OVM_OL7U3_X86_64_12201DBRAC_PVHVM-2of2.tar.gz"]
+  },
+  "network": [
+          { "id": "0", "name": "ICN - vlan70" },
+          { "id": "1", "name": "racpriv1" }
+  ],
+  "total_vms_to_clone": [
+         { "id": "0", "name": "rac1" },
+         { "id": "1", "name": "rac2" }
+  ],
+  "total_vdisks": {
+           "no": 5
+  },
+  "vdisks": {
+           "name": "racasm",
+           "size": 1073741824,
+           "shareable": true,
+           "diskType": "VIRTUAL_DISK"
+  },
+  "java_home": "/jre1.7.0_80",
+
+  "deploy_rac": {
+          "script_name": "/root/deploycluster3/deploycluster.py",
+          "init_file": "/root/deploycluster3/netconfig.ini"
+  }
+}
+
